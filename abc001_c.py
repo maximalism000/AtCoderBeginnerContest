@@ -1,8 +1,12 @@
+'''
+誤差で失敗してる
+'''
+
+
 deg, dis = map(int, input().split())
 
 x = deg * 10
-y = round((dis / 60), 1)
-
+y = round(((dis / 60) - 0.01), 1)
 
 dir_num = list(range(1125, 36001, 2250))
 dir_name = [
@@ -23,7 +27,7 @@ wind_number = [
         0.0, 0.3, 1.6, 3.4, 5.5, 8.0, 10.8, 13.9, 17.2, 20.8, 24.5, 28.5, 32.7]
 
 
-for i in range(len(wind_number)):
+for i in range(len(wind_number) - 1):
     if wind_number[i] <= y < wind_number[i+1]:
         W = i
         break
