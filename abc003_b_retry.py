@@ -1,0 +1,19 @@
+S = list(input())
+T = list(input())
+alist = list('atcoder')
+
+
+def judge(lst1, lst2):
+    for i in range(len(lst1)):
+        if lst1[i] == lst2[i]:
+            pass
+        elif (lst1[i] == '@' and lst2[i] in alist) or (lst2[i] == '@' and lst1[i] in alist):
+            pass
+        else:
+            print('You will lose')
+            break
+    else:
+        print('You can win')
+
+
+judge(S, T)
